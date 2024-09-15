@@ -8,6 +8,7 @@
         public string Email { get; set; }
         public string Mobile { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public string PhotoPath { get; set; }
+        // Note: There is no 'Photo' property here
+        public string PhotoPath { get; set; }  // This is probably what you meant
     }
 }

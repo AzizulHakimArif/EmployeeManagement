@@ -1,4 +1,4 @@
-using EmployeeManagementSystem.Data;
+using EmployeeManagementSystem.Data;  // Ensure you have your Data namespace
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Configure EF Core to use SQL Server
+// Configure Entity Framework Core to use SQL Server
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -26,6 +26,7 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+// Set up the default controller route
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
