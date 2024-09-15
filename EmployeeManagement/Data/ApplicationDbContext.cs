@@ -10,7 +10,7 @@ namespace EmployeeManagementSystem.Data
         {
         }
 
-        // Define your DbSets (tables) here
+    
         public DbSet<Employee> Employees { get; set; }
     }
 }

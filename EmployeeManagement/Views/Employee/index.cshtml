@@ -1,30 +1,43 @@
 ﻿@model IEnumerable<EmployeeManagementSystem.Models.Employee>
 
-<h1>Employees</h1>
-<a asp-action="Create">Create New</a>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Full Name</th>
-            <th>Email</th>
-            <th>Mobile</th>
-            <th>Date of Birth</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<div class="container mt-5">
+    <h2>Employees</h2>
+
+    <!-- Create New Employee Button -->
+    <a asp-action="Create" class="btn btn-primary mb-3">Create New</a>
+
+    <!-- Employee Table -->
+    <table class="table table-bordered table-striped">
+        <thead class="table-light">
             <tr>
-                <td>@item.FirstName @item.LastName</td>
-                <td>@item.Email</td>
-                <td>@item.Mobile</td>
-                <td>@item.DateOfBirth.ToString("dd/MM/yyyy")</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@item.EmployeeId">Delete</a>
-                </td>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Date of Birth</th>
+                <th>Actions</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.FirstName @item.LastName</td>
+                    <td>@item.Email</td>
+                    <td>@item.Mobile</td>
+                    <td>@item.DateOfBirth.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        <!-- Edit Employee Button -->
+                        <a asp-action="Edit" asp-route-id="@item.EmployeeId" class="btn btn-warning btn-sm">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+
+                        <!-- Delete Employee Button -->
+                        <a asp-action="Delete" asp-route-id="@item.EmployeeId" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash"></i> Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

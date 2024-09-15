@@ -1,0 +1,14 @@
+﻿@model EmployeeManagement.Models.ErrorViewModel
+
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">An Error Occurred</h1>
+<p>An error occurred while processing your request. Please try again later.</p>
+@if (Model?.RequestId != null)
+{
+    <p>
+        <strong>Request ID:</strong> @Model.RequestId
+    </p>
+}

@@ -31,4 +31,9 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+// Set up routing for Employee and other controllers
+app.MapControllerRoute(
+    name: "employee",
+    pattern: "{controller=Employee}/{action=Index}/{id?}");
+
 app.Run();
